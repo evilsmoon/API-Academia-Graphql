@@ -4,7 +4,11 @@
   "description": "Academia Graphql",
   "main": "build/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node build/server.js",
+    "build": "tsc -p . && npc src/schema build/schema",
+    "start:dev": "npm run build:dev",
+    "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,json,graphql"
+
   },
   "author": "Gabriel Morales <gabrielmorales201564@hotmail.com>",
   "license": "MIT",
